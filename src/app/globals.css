@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@source "../../node_modules/@relkimm/k-auth";
+@source "../../node_modules/@k-auth/next";
 
 :root {
   --background: #ffffff;

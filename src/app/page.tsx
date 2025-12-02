@@ -1,5 +1,5 @@
 import { auth, signIn } from "@/auth";
-import { Button } from "@relkimm/k-auth/ui";
+import { Button } from "@k-auth/next/ui";
 import { SignOutButton } from "@/components/sign-out-button";
 
 export default async function Home() {
@@ -12,7 +12,7 @@ export default async function Home() {
           K-Auth 예제
         </h1>
 
-        {session ? (
+        {session?.user ? (
           <div className="flex flex-col items-center gap-4">
             <div className="text-center">
               <p className="text-lg text-zinc-700 dark:text-zinc-300">
@@ -32,14 +32,14 @@ export default async function Home() {
             <p className="text-zinc-600 dark:text-zinc-400">
               소셜 로그인을 선택하세요
             </p>
-            <div className="flex flex-col gap-3 w-full max-w-xs">
+            <div className="flex flex-col gap-3">
               <form
                 action={async () => {
                   "use server";
                   await signIn("kakao");
                 }}
               >
-                <Button.Kakao type="submit" className="w-full" />
+                <Button.Kakao type="submit" size="lg" className="w-72" />
               </form>
               <form
                 action={async () => {
@@ -47,7 +47,7 @@ export default async function Home() {
                   await signIn("naver");
                 }}
               >
-                <Button.Naver type="submit" className="w-full" />
+                <Button.Naver type="submit" size="lg" className="w-72" />
               </form>
             </div>
           </div>
