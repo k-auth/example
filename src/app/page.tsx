@@ -21,9 +21,6 @@ export default async function Home() {
               <p className="text-xl font-semibold text-zinc-900 dark:text-white">
                 {session.user?.name}
               </p>
-              <p className="text-sm text-zinc-500">
-                {session.user?.email}
-              </p>
             </div>
             <SignOutButton />
           </div>
